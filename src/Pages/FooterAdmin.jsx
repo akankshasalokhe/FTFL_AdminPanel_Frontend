@@ -89,12 +89,16 @@ const FooterAdmin = () => {
 
   return (
     <div className="container py-4">
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <h4 className="mb-0">Footer Settings</h4>
-        <Button variant="primary" onClick={() => setShowModal(true)}>
-          {footer ? 'Edit Footer' : 'Create Footer'}
-        </Button>
-      </div>
+      <div className="text-center mb-3">
+  <h4 className="mb-0 fw-bold fs-3">Footer Settings</h4>
+</div>
+
+<div className="d-flex justify-content-end mb-3">
+  <Button variant="primary" onClick={() => setShowModal(true)}>
+    {footer ? 'Edit Footer' : 'Create Footer'}
+  </Button>
+</div>
+
 
       {alert.message && (
         <Alert

@@ -171,16 +171,18 @@ const BlogPage = () => {
 
   return (
     <Container className="my-5">
-      <Row className="align-items-center justify-content-between mb-4">
-        <Col xs={12} md={6}>
-          <h2 className="text-center text-md-start">Blog</h2>
-        </Col>
-        <Col xs={12} md={6} className="text-end">
+      <div className=" mb-4">
+        <div>
+          <h2 className="text-center fs-3 fw-bold">Blog</h2>
+        </div>
+        <div className="text-end">
           <Button onClick={handleShow} variant="primary">
             Create Blog
           </Button>
-        </Col>
-      </Row>
+        </div>
+      </div>
+
+     
 
       {alert.show && (
         <Alert variant={alert.variant} className="text-center">

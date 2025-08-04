@@ -86,14 +86,17 @@ const Testimonial = () => {
 
   return (
     <Container className="mt-5">
-      <Row className="align-items-center mb-3">
-        <Col><h2 className="text-center">Testimonials</h2></Col>
-        <Col className="text-end">
-          <Button variant="primary" onClick={() => handleOpen()}>
-            + Add Testimonial
-          </Button>
-        </Col>
-      </Row>
+      <div className="mb-3">
+          <div>
+            <h2 className=" text-center fw-bold fs-3">Testimonials</h2>
+          </div>
+          <div className="text-end">
+            <Button variant="primary" onClick={() => handleOpen()}>
+              + Add Testimonial
+            </Button>
+          </div>
+        </div>
+
 
       <Table striped bordered hover responsive>
         <thead>
