@@ -503,10 +503,14 @@ export const links = [
       //   name: 'Packages',
       //   icon: <TbPackages/>,
       // },
+      {
+        name: 'AboutSection',
+        icon: <GiLouvrePyramid />,
+      },
 
       {
         name: 'Create Job-Posting',
-        icon: <MdWork/>,
+        icon: <MdWork />,
       },
 
       {

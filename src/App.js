@@ -36,6 +36,7 @@ import JobsPosted from './Pages/JobsPosted';
 import FooterAdmin from './Pages/FooterAdmin';
 import Testimonial from './Pages/Testimonial';
 import BlogPage from './Pages/Blog';
+import AboutSection from './Pages/AboutSection';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(
@@ -126,7 +127,8 @@ const App = () => {
             <Route path="/stacked" element={<Stacked />} />
             <Route path="/Footer" element={<FooterAdmin/>}/>
             <Route path="/Testimonial" element={<Testimonial/>}/>
-            <Route path='/Blog' element={<BlogPage/>}/>'
+            <Route path='/Blog' element={<BlogPage/>}/>
+            <Route path='/AboutSection' element={<AboutSection/>}/>
             <Route path="*" element={<Navigate to="/Applied-Candidates" />} />
           </>
         );
