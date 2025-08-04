@@ -16,7 +16,7 @@ const FooterAdmin = () => {
 
   const fetchFooter = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5005/api/footer/get');
+      const { data } = await axios.get('https://ftfl-backend-psi.vercel.app/api/footer/get');
       setFooter(data);
       if (data) setFormData(data);
     } catch (err) {
@@ -58,10 +58,10 @@ const FooterAdmin = () => {
     e.preventDefault();
     try {
       if (footer?._id) {
-        await axios.put(`http://localhost:5005/api/footer/update/${footer._id}`, formData);
+        await axios.put(`https://ftfl-backend-psi.vercel.app/api/footer/update/${footer._id}`, formData);
         setAlert({ type: 'success', message: 'Footer updated successfully' });
       } else {
-        await axios.post('http://localhost:5005/api/footer/create', formData);
+        await axios.post('https://ftfl-backend-psi.vercel.app/api/footer/create', formData);
         setAlert({ type: 'success', message: 'Footer created successfully' });
       }
       fetchFooter();
@@ -74,7 +74,7 @@ const FooterAdmin = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5005/api/footer/delete/${footer._id}`);
+      await axios.delete(`https://ftfl-backend-psi.vercel.app/api/footer/delete/${footer._id}`);
       setFooter(null);
       setFormData({
         socialLinks: [],

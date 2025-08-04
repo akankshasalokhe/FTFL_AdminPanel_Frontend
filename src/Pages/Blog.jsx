@@ -29,7 +29,7 @@ const BlogPage = () => {
 
   const fetchBlogs = async () => {
     try {
-      const res = await fetch("http://localhost:5005/api/blog/get");
+      const res = await fetch("https://ftfl-backend-psi.vercel.app/api/blog/get");
       const data = await res.json();
       setBlogs(data);
     } catch (err) {
@@ -122,8 +122,8 @@ const BlogPage = () => {
 
     try {
       const url = isEditMode
-        ? `http://localhost:5005/api/blog/update/${blogData._id}`
-        : `http://localhost:5005/api/blog/create`;
+        ? `https://ftfl-backend-psi.vercel.app/api/blog/update/${blogData._id}`
+        : `https://ftfl-backend-psi.vercel.app/api/blog/create`;
       const method = isEditMode ? "PUT" : "POST";
 
       const res = await fetch(url, {
@@ -159,7 +159,7 @@ const BlogPage = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this blog?")) return;
     try {
-      await fetch(`http://localhost:5005/api/blog/delete/${id}`, {
+      await fetch(`https://ftfl-backend-psi.vercel.app/api/blog/delete/${id}`, {
         method: "DELETE",
       });
       showAlert("Blog deleted successfully!", "warning");

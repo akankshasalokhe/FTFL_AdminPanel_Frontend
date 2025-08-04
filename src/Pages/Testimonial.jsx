@@ -23,7 +23,7 @@ const Testimonial = () => {
 
   const fetchTestimonials = async () => {
     try {
-      const res = await axios.get("http://localhost:5005/api/testimonial/get");
+      const res = await axios.get("https://ftfl-backend-psi.vercel.app/api/testimonial/get");
       setTestimonials(res.data);
     } catch (err) {
       alert("Failed to fetch testimonials");
@@ -63,9 +63,9 @@ const Testimonial = () => {
   const handleSubmit = async () => {
     try {
       if (editId) {
-        await axios.put(`http://localhost:5005/api/testimonial/update/${editId}`, formData);
+        await axios.put(`https://ftfl-backend-psi.vercel.app/api/testimonial/update/${editId}`, formData);
       } else {
-        await axios.post("http://localhost:5005/api/testimonial/create", formData);
+        await axios.post("https://ftfl-backend-psi.vercel.app/api/testimonial/create", formData);
       }
       fetchTestimonials();
       handleClose();
@@ -77,7 +77,7 @@ const Testimonial = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this testimonial?")) return;
     try {
-      await axios.delete(`http://localhost:5005/api/testimonial/delete/${id}`);
+      await axios.delete(`https://ftfl-backend-psi.vercel.app/api/testimonial/delete/${id}`);
       fetchTestimonials();
     } catch (err) {
       alert("Failed to delete testimonial");
