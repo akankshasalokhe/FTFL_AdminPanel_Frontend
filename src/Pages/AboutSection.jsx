@@ -21,6 +21,7 @@ const AboutSection = () => {
   const [formData, setFormData] = useState({
     title: "",
     type: "",
+    description: "",
     image: "",
   });
   const [loading, setLoading] = useState(false);
@@ -42,7 +43,7 @@ const AboutSection = () => {
   const handleClose = () => {
     setShowModal(false);
     setIsEditMode(false);
-    setFormData({ title: "", type: "", image: "" });
+    setFormData({ title: "", type: "", description: "", image: "" });
     setEditId(null);
   };
 
@@ -62,6 +63,7 @@ const AboutSection = () => {
     const data = new FormData();
     data.append("title", formData.title);
     data.append("type", formData.type);
+    data.append("description", formData.description);
     if (formData.image) data.append("image", formData.image);
 
     try {
@@ -82,6 +84,7 @@ const AboutSection = () => {
     setFormData({
       title: section.title,
       type: section.type,
+      description: section.description || "",
       image: section.image || "",
     });
     setEditId(section._id);
@@ -121,7 +124,7 @@ const AboutSection = () => {
           >
             <Card className="about-card shadow-sm">
               <Card.Body>
-                <Card.Title className="fw-bold mb-5 ">
+                <Card.Title className="fw-bold mb-5">
                   {section.title}
                 </Card.Title>
                 <Card.Subtitle className="mb-5 text-muted text-capitalize">
@@ -134,14 +137,14 @@ const AboutSection = () => {
                     size="sm"
                     onClick={() => handleEdit(section)}
                   >
-                     Edit
+                    Edit
                   </Button>
                   <Button
                     variant="outline-danger"
                     size="sm"
                     onClick={() => handleDelete(section._id)}
                   >
-                     Delete
+                    Delete
                   </Button>
                 </div>
               </Card.Body>
@@ -172,6 +175,17 @@ const AboutSection = () => {
                 type="text"
                 name="type"
                 value={formData.type}
+                onChange={handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formDescription" className="mb-3">
+              <Form.Label>Description</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                name="description"
+                value={formData.description}
                 onChange={handleChange}
               />
             </Form.Group>
